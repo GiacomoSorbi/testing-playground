@@ -2,6 +2,11 @@
 
 TDD Playground meant to teach students about TDD best practice.
 
+## Avaikable Scripts 📜
+
+- `test` runs all tests once
+- `test:watch` runs all tests and keeps the watch mode [includes further options]
+
 ## Activities included 💻
 
 A few coding katas, including:
@@ -15,6 +20,6 @@ A few coding katas, including:
 
 ## Useful links 🔗
 
-[Jest documentation - matchers](https://jestjs.io/docs/en/using-matchers) - [full scary version](https://jestjs.io/docs/en/expect).
-[TDD on wiki](https://en.wikipedia.org/wiki/Test-driven_development).
-[Yarn](https://yarnpkg.com/lang/en/docs/getting-started/).
+- [Jest documentation - matchers](https://jestjs.io/docs/en/using-matchers) - [full scary version](https://jestjs.io/docs/en/expect).
+- [TDD on wiki](https://en.wikipedia.org/wiki/Test-driven_development).
+- [Yarn](https://yarnpkg.com/lang/en/docs/getting-started/).

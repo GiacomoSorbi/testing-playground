@@ -4,7 +4,8 @@
   "description": "A testing playground for TDD practice",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "test",
