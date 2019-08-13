@@ -1,7 +1,7 @@
 import sumOfNumbers from './'
 
 describe('sumOfNumbers should', () => {
-  xit('exist', () => {
+  it('exist', () => {
     expect(sumOfNumbers).toBeDefined()
   })
 })
