@@ -1,4 +1,4 @@
-import passwordGenerator from './'
+import passwordGenerator, { all } from './'
 
 describe('password generator should', () => {
   it('return a string', () => {
@@ -10,15 +10,15 @@ describe('password generator should', () => {
   })
 
   it('have password with at least 1 uppercase letter', () => {
-    expect(/[A-Z]/.test(passwordGenerator())).toBe(true)
+    expect(passwordGenerator()).toMatch(/[A-Z]/)
   })
 
   it('have password with at least 1 lowercasse letter', () => {
-    expect(/[a-z]/.test(passwordGenerator())).toBe(true)
+    expect(passwordGenerator()).toMatch(/[a-z]/)
   })
 
   it('have password with at least 1 number', () => {
-    expect(/[0-9]/.test(passwordGenerator())).toBe(true)
+    expect(passwordGenerator()).toMatch(/\d/)
   })
 
   it('have password with at least 1 symbol', () => {
@@ -27,11 +27,22 @@ describe('password generator should', () => {
 
   it('not generate duplicates', () => {
     const set = new Set()
-
     for (let i = 0; i < 10000; i++) {
       set.add(passwordGenerator())
     }
-
     expect(set.size).toBeGreaterThan(9999)
+  })
+
+  it('uses all the available characters', () => {
+    const set = new Set()
+
+    for (let i = 0; i < 100; i++) {
+      const password = passwordGenerator()
+      Array.from(password).forEach(char => {
+        set.add(char)
+      })
+    }
+
+    expect(set.size).toBe(all.length)
   })
 })
