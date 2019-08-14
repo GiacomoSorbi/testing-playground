@@ -29,4 +29,11 @@ describe('Point class should', () => {
     point2 = new Point(10, 20, 3)
     expect(Point.distance(point1, point2)).toBeCloseTo(Math.pow(300, 0.5))
   })
+
+  it('generate points with a property that is constantly updated with the distance from the origin', () => {
+    let point1 = new Point(5, 6)
+    expect(point1.distFromOrigin).toBeCloseTo(7.8, 0.1)
+    point1.x = 10
+    expect(point1.distFromOrigin).toBeCloseTo(Math.sqrt(136))
+  })
 })

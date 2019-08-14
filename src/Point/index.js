@@ -1,3 +1,5 @@
+import { thisExpression } from '@babel/types'
+
 export default class Point {
   constructor(x, y, z = 0) {
     this.x = x
@@ -8,5 +10,9 @@ export default class Point {
     return Math.sqrt(
       ['x', 'y', 'z'].reduce((a, b) => a + (point1[b] - point2[b]) ** 2, 0),
     )
+  }
+
+  get distFromOrigin() {
+    return Math.hypot(this.x, this.y, this.z)
   }
 }
