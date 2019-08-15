@@ -17,6 +17,15 @@ describe('fibonacciCounter should', () => {
     it(`return requested number of first${i - 1 ? ' ' + i : ''} value${
       i - 1 ? 's' : ''
     } of Fibonacci sequence`, () => {
-      expect(fibonacciCounter(4)).toEqual(seq.slice(i))
+      expect(fibonacciCounter(i)).toEqual(seq.slice(0, i))
     })
+
+  it(`returns an empty array if passed in a 0`, () => {
+    expect(fibonacciCounter(0)).toEqual([])
+  })
+  it(`throws an error if passed a non-numerical parameter`, () => {
+    expect(() => fibonacciCounter('a')).toThrow()
+    expect(() => fibonacciCounter([])).toThrow()
+    expect(() => fibonacciCounter({})).toThrow()
+  })
 })

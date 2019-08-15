@@ -16,3 +16,15 @@ const fibonacci = n => {
 }
 
 export default fibonacci
+
+export const fibonacciCounter = n => {
+  let fibSum = [0, 1]
+  if (n <= 1) {
+    return [0, 1].slice(0, n)
+  } else {
+    for (let i = 2; i < n; i++) {
+      fibSum.push(fibSum[i - 2] + fibSum[i - 1])
+    }
+  }
+  return fibSum
+}
