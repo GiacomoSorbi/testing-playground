@@ -27,10 +27,10 @@ describe('password generator should', () => {
 
   it('not generate duplicates', () => {
     const set = new Set()
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 1000; i++) {
       set.add(passwordGenerator())
     }
-    expect(set.size).toBeGreaterThan(9999)
+    expect(set.size).toBeGreaterThan(999)
   })
 
   it('uses all the available characters', () => {

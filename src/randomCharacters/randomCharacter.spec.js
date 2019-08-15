@@ -13,7 +13,7 @@ describe('randomCharacter should', () => {
   it('take one random character from the provided string', () => {
     const frequencyDictionary = {}
     const base = 'abcdefgh'
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 100; i++) {
       const newChar = randomCharacter(base)
       frequencyDictionary[newChar] = (frequencyDictionary[newChar] || 0) + 1
     }
@@ -22,10 +22,10 @@ describe('randomCharacter should', () => {
   it('take one random character from the provided string', () => {
     const frequencyDictionary = {}
     const base = 'abcdefgh'
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 1000; i++) {
       const newChar = randomCharacter(base)
       frequencyDictionary[newChar] = (frequencyDictionary[newChar] || 0) + 1
     }
-    for (let c of base) expect(frequencyDictionary[c]).toBeGreaterThan(1000)
+    for (let c of base) expect(frequencyDictionary[c]).toBeGreaterThan(90)
   })
 })
