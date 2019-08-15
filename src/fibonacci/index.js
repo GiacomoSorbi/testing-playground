@@ -23,11 +23,9 @@ export const fibonacciCounter = n => {
   } else {
     n = parseInt(n)
   }
-
   if (isNaN(n)) {
     throw new Error('Must be an integer')
   }
-
   let fibSum = [0, 1]
   if (n <= 1) {
     return [0, 1].slice(0, n)
