@@ -21,9 +21,9 @@ export const fibonacciCounter = n => {
   if (n < 0 || n % 1) {
     throw new Error('Must be a positive integer')
   } else {
-    n = parseInt(n)
+    n = Array.isArray(n) ? n : Number(n)
   }
-  if (isNaN(n)) {
+  if (Number.isNaN(n) || Array.isArray(n)) {
     throw new Error('Must be an integer')
   }
   let fibSum = [0, 1]
