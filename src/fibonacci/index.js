@@ -18,6 +18,16 @@ const fibonacci = n => {
 export default fibonacci
 
 export const fibonacciCounter = n => {
+  if (n < 0 || n % 1) {
+    throw new Error('Must be a positive integer')
+  } else {
+    n = parseInt(n)
+  }
+
+  if (isNaN(n)) {
+    throw new Error('Must be an integer')
+  }
+
   let fibSum = [0, 1]
   if (n <= 1) {
     return [0, 1].slice(0, n)
